@@ -7,12 +7,11 @@ import {
   Cloud,
   Code2,
   Database,
-  BrainCircuit,
-  Smartphone,
+  Monitor,
+  Zap,
   Server,
   Boxes,
-  KeyRound,
-  Server as ServerIcon,
+  Bot,
   Building2,
   ExternalLink,
 } from "lucide-react";
@@ -41,14 +40,14 @@ const REASONS = [
 ];
 
 const TECHNOLOGIES = [
+  { icon: Code2, label: "C# / .NET 6–10" },
+  { icon: Server, label: "ASP.NET Core" },
+  { icon: Monitor, label: "WPF & Desktop Apps" },
+  { icon: Database, label: "SQL Server & MongoDB" },
+  { icon: Zap, label: "Redis & RabbitMQ" },
   { icon: Cloud, label: "AWS & Azure" },
-  { icon: Code2, label: "React & Next.js" },
-  { icon: Database, label: "PostgreSQL" },
-  { icon: BrainCircuit, label: "AI/ML Models" },
-  { icon: Smartphone, label: "Flutter & Swift" },
-  { icon: Server, label: "Node.js & Go" },
-  { icon: Boxes, label: "Kubernetes" },
-  { icon: KeyRound, label: "Auth0 / Okta" },
+  { icon: Boxes, label: "Docker & CI/CD" },
+  { icon: Bot, label: "AI-Assisted Development" },
 ];
 
 const TESTIMONIALS = [
@@ -101,18 +100,22 @@ export default function Home() {
           </div>
 
           <CodeWindow
-            title="softveld-engine.ts"
+            title="SoftVeldEngine.cs"
             className="lg:ml-auto lg:max-w-md"
             lines={[
-              { text: "export class DigitalArchitecture {", className: "text-primary-300" },
+              { text: "public class DigitalArchitecture", className: "text-primary-300" },
+              { text: "{" },
               {
-                text: "  async engineerSolution(vision: Project) {",
+                text: "  public async Task<FutureProofSystem> EngineerSolution(",
               },
+              { text: "    Project vision)" },
+              { text: "  {" },
               {
-                text: "    const infrastructure = await Cloud.deploy({",
+                text: "    var infrastructure = await Cloud.DeployAsync(new()",
               },
-              { text: "      scalability: true,", className: "text-green-400" },
-              { text: "      resilience: \"99.99%\",", className: "text-green-400" },
+              { text: "    {" },
+              { text: "      Scalability = true,", className: "text-green-400" },
+              { text: "      Resilience = \"99.99%\",", className: "text-green-400" },
               { text: "    });" },
               { text: " " },
               {
@@ -156,7 +159,7 @@ export default function Home() {
                 </p>
                 {reason.image && (
                   <ImageBlock
-                    icon={ServerIcon}
+                    icon={Server}
                     variant="server"
                     className="mt-6 h-40 w-full rounded-xl"
                   />

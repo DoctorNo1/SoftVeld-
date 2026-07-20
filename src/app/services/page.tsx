@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   LayoutDashboard,
-  Smartphone,
+  Monitor,
   Cloud,
   Palette,
   Microscope,
@@ -19,24 +19,24 @@ import ImageBlock from "@/components/ImageBlock";
 export const metadata: Metadata = {
   title: "Services | SoftVeld",
   description:
-    "Custom web apps, mobile development, cloud infrastructure, and UI/UX design engineered by SoftVeld.",
+    "Custom .NET web apps, WPF desktop applications, cloud infrastructure, and UI/UX design engineered by SoftVeld.",
 };
 
 const OFFERINGS = [
   {
     icon: LayoutDashboard,
     title: "Custom Web Apps",
-    body: "High-performance enterprise applications built with modern frameworks to streamline your internal workflows and customer-facing portals.",
+    body: "High-performance enterprise applications built on ASP.NET Core to streamline your internal workflows and customer-facing portals.",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Development",
-    body: "Native and cross-platform mobile solutions for iOS and Android, focusing on fluid performance and seamless hardware integration.",
+    icon: Monitor,
+    title: "Desktop & Cross-Platform Apps",
+    body: "WPF and cross-platform desktop applications built with .NET, focusing on fluid performance and deep hardware and system integration.",
   },
   {
     icon: Cloud,
     title: "Cloud Infrastructure",
-    body: "Architecture design, deployment automation, and scaling strategies for AWS, Azure, and Google Cloud environments.",
+    body: "Architecture design, deployment automation, and scaling strategies for AWS and Azure environments.",
   },
   {
     icon: Palette,
@@ -60,7 +60,7 @@ export default function ServicesPage() {
             <p className="mt-6 max-w-lg text-base leading-relaxed text-secondary-500">
               We build robust, scalable, and sophisticated software solutions
               that solve complex business challenges. From enterprise
-              infrastructure to mobile experiences.
+              infrastructure to desktop experiences.
             </p>
           </div>
           <ImageBlock
@@ -171,13 +171,13 @@ export default function ServicesPage() {
 
             <div className="grid gap-6 rounded-2xl border border-secondary-100 bg-white p-8 sm:grid-cols-2 sm:items-center">
               <CodeWindow
-                title="optimize.ts"
+                title="Optimize.cs"
                 lines={[
-                  { text: "const optimizeStack = () =>", className: "text-primary-300" },
-                  { text: "  services.map((s) => ({" },
-                  { text: "    ...s," },
-                  { text: "    status: 'performant',", className: "text-green-400" },
-                  { text: "  }));" },
+                  { text: "var optimized = services", className: "text-primary-300" },
+                  { text: "  .Select(s => s with" },
+                  { text: "  {" },
+                  { text: "    Status = \"performant\",", className: "text-green-400" },
+                  { text: "  });" },
                 ]}
               />
               <div>
@@ -185,7 +185,7 @@ export default function ServicesPage() {
                   Modern Tech Stacks
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-secondary-500">
-                  We leverage TypeScript, React, Go, and Rust to build
+                  We leverage C#, .NET 6&ndash;10, and ASP.NET Core to build
                   applications that don&rsquo;t just work—they excel.
                 </p>
               </div>
