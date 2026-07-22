@@ -9,9 +9,8 @@ Built with plain **HTML, CSS, and JavaScript** — no frameworks, no build step.
 
 - `index.html` — Home
 - `services.html` — Services
-- `portfolio.html` — Portfolio / case studies
-- `about.html` — About the company and team
-- `contact.html` — Contact form and office info
+- `about.html` — About the company
+- `contact.html` — Contact form
 
 ## Structure
 
