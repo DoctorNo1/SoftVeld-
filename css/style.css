@@ -784,6 +784,15 @@ textarea.form-field {
   font-size: 0.875rem;
 }
 
+.form-error {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  background: #fef2f2;
+  color: #b91c1c;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
 /* ==========================================================================
    Page-specific helpers
    ========================================================================== */
