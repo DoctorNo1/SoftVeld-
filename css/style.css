@@ -244,9 +244,13 @@ img {
 
 .menu-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.5rem;
   background: none;
   border: 0;
-  padding: 0.25rem;
   color: var(--secondary-900);
   cursor: pointer;
 }
@@ -889,6 +893,14 @@ textarea.form-field {
   background: #22c55e;
 }
 
+.split-13-1 {
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.split-1-13 {
+  grid-template-columns: 1fr 1.3fr;
+}
+
 .split-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1050,12 +1062,23 @@ textarea.form-field {
   }
 
   .grid--2,
-  .grid--3 {
+  .grid--3,
+  .split-13-1,
+  .split-1-13 {
     grid-template-columns: 1fr;
   }
 
   .dark-hero {
     padding: 3rem 2rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .code-window pre {
+    padding: 1rem;
+    font-size: 12px;
   }
 }
 
