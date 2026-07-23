@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js-ready");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | SoftVeld</title>
   <meta name="description" content="SoftVeld is a high-end software engineering firm dedicated to bridging the gap between complex technical challenges and elegant, user-centric solutions.">
@@ -39,7 +40,7 @@
     <!-- Hero -->
     <section style="padding-top: 4rem;">
       <div class="container">
-        <div class="dark-hero">
+        <div class="dark-hero hero-enter">
           <p class="eyebrow eyebrow--dark">Established 2021</p>
           <h1>Architecting the Future of <span class="accent">Digital Excellence.</span></h1>
           <p>
@@ -54,7 +55,7 @@
     <!-- Genesis -->
     <section class="section">
       <div class="container">
-        <div class="card card--white" style="max-width: 44rem;">
+        <div class="card card--white" style="max-width: 44rem;" data-reveal>
           <h3 style="font-size: 1.25rem;">The Genesis of Innovation</h3>
           <p style="margin-top: 1rem;">
             Founded by a small collective of senior engineers and architects,
@@ -71,7 +72,7 @@
           </p>
         </div>
 
-        <div class="grid grid--3" style="margin-top: 1.5rem;">
+        <div class="grid grid--3" style="margin-top: 1.5rem;" data-reveal-group>
           <div class="card card--blue" style="padding: 1.5rem;">
             <span data-icon="zap" data-size="22"></span>
             <h3 style="margin-top: 1rem; font-size: 0.875rem;">Technical Excellence</h3>
@@ -93,7 +94,7 @@
 
     <!-- Mission -->
     <section class="mission">
-      <div class="container">
+      <div class="container" data-reveal>
         <p class="eyebrow eyebrow--dark">Our Mission</p>
         <blockquote>
           &ldquo;To empower industry leaders by delivering uncompromising
@@ -107,12 +108,12 @@
     <!-- Philosophy -->
     <section class="section">
       <div class="container">
-        <h2 class="section-heading">Our Engineering Philosophy</h2>
-        <p class="section-sub">
+        <h2 class="section-heading" data-reveal>Our Engineering Philosophy</h2>
+        <p class="section-sub" data-reveal>
           The principles that guide every line of code we ship.
         </p>
 
-        <div class="code-window" style="margin-top: 2.5rem;">
+        <div class="code-window" style="margin-top: 2.5rem;" data-reveal>
           <div class="code-window__bar">
             <span class="code-window__dot code-window__dot--red"></span>
             <span class="code-window__dot code-window__dot--yellow"></span>
@@ -139,7 +140,7 @@
 
     <!-- CTA -->
     <section class="cta-banner">
-      <div class="container">
+      <div class="container" data-reveal>
         <h2>Ready to build the extraordinary?</h2>
         <p>
           Join the ranks of market leaders who trust SoftVeld with their most

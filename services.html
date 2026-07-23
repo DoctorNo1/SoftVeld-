@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js-ready");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | SoftVeld</title>
   <meta name="description" content="Custom .NET web apps, WPF desktop applications, cloud infrastructure, and UI/UX design engineered by SoftVeld.">
@@ -38,7 +39,7 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero-enter">
         <span class="badge">Expert Engineering</span>
         <h1 style="max-width: 42rem;">Technical excellence for <span class="accent">visionary</span> brands.</h1>
         <p class="hero__subtitle">
@@ -52,11 +53,11 @@
     <!-- Offerings -->
     <section class="section section--white">
       <div class="container">
-        <div class="heading-bar">
+        <div class="heading-bar" data-reveal>
           <h2 class="section-heading">Our Specialized Offerings</h2>
         </div>
 
-        <div class="grid grid--4" style="margin-top: 2.5rem;">
+        <div class="grid grid--4" style="margin-top: 2.5rem;" data-reveal-group>
           <div class="card testimonial">
             <div>
               <span class="icon-box"><span data-icon="layout-dashboard" data-size="20"></span></span>
@@ -113,13 +114,13 @@
     <!-- How we deliver -->
     <section class="section">
       <div class="container">
-        <h2 class="section-heading">How We Deliver Excellence</h2>
-        <p class="section-sub">
+        <h2 class="section-heading" data-reveal>How We Deliver Excellence</h2>
+        <p class="section-sub" data-reveal>
           We combine rigorous engineering standards with an agile methodology
           to ensure predictable outcomes and high-velocity shipping.
         </p>
 
-        <div class="grid split-13-1" style="margin-top: 2.5rem;">
+        <div class="grid split-13-1" style="margin-top: 2.5rem;" data-reveal-group>
           <div class="card card--dark" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <p class="eyebrow eyebrow--dark" style="margin: 0;">01 / Discovery</p>
@@ -144,7 +145,7 @@
           </div>
         </div>
 
-        <div class="grid split-1-13" style="margin-top: 1.5rem;">
+        <div class="grid split-1-13" style="margin-top: 1.5rem;" data-reveal-group>
           <div class="card card--blue" style="display: flex; flex-direction: column; justify-content: space-between;">
             <span data-icon="rocket" data-size="32" data-stroke-width="1.5"></span>
             <div style="margin-top: 2rem;">
@@ -181,7 +182,7 @@
 
     <!-- CTA -->
     <section class="cta-banner">
-      <div class="container">
+      <div class="container" data-reveal>
         <h2>Ready to scale your technical vision?</h2>
         <p>
           Schedule a 30-minute architecture review with our lead consultants

@@ -1,3 +1,31 @@
+// Scroll-reveal animations for [data-reveal] / [data-reveal-group] elements.
+// html.js-ready (set inline in <head>, before paint) is what actually
+// hides them via CSS - if this script fails to load, or the browser
+// prefers reduced motion, the CSS falls back to fully visible content.
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealTargets = document.querySelectorAll(
+    "[data-reveal], [data-reveal-group]"
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealTargets.forEach((el) => revealObserver.observe(el));
+}
+
 // Mobile navigation toggle
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
@@ -49,7 +77,7 @@ if (contactForm) {
       const error = document.createElement("p");
       error.className = "form-error";
       error.textContent =
-        "Something went wrong sending your message. Please email us directly at hello@softveld.io.";
+        "Something went wrong sending your message. Please try again in a moment.";
       submitButton.insertAdjacentElement("afterend", error);
       submitButton.disabled = false;
       submitButton.innerHTML = submitLabel;

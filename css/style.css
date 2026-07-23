@@ -38,6 +38,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -86,6 +90,93 @@ img {
 }
 
 /* ==========================================================================
+   Motion
+   ========================================================================== */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Elements observed by js/main.js get [data-reveal] and fade/slide in
+   once they scroll into view. The .js-ready gate keeps content visible
+   by default so it still reads fine with JavaScript disabled/blocked. */
+.js-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-ready [data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-ready [data-reveal-group].is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-ready [data-reveal-group].is-visible > *:nth-child(1) { transition-delay: 0s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(2) { transition-delay: 0.06s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(3) { transition-delay: 0.12s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(4) { transition-delay: 0.18s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(5) { transition-delay: 0.24s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(6) { transition-delay: 0.3s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(7) { transition-delay: 0.36s; }
+.js-ready [data-reveal-group].is-visible > *:nth-child(8) { transition-delay: 0.42s; }
+
+.hero-enter {
+  animation: fade-up 0.7s ease both;
+}
+
+.hero-enter-delay {
+  animation: fade-up 0.7s ease 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-ready [data-reveal],
+  .js-ready [data-reveal-group] > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
    Buttons, badges, links
    ========================================================================== */
 
@@ -112,6 +203,8 @@ img {
 
 .btn--primary:hover {
   background: var(--primary-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(0, 98, 255, 0.35);
 }
 
 .btn--outline {
@@ -122,6 +215,7 @@ img {
 
 .btn--outline:hover {
   border-color: var(--secondary-300);
+  transform: translateY(-2px);
 }
 
 .btn--white {
@@ -130,7 +224,7 @@ img {
 }
 
 .btn--white:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .btn--ghost {
@@ -141,6 +235,11 @@ img {
 
 .btn--ghost:hover {
   background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .badge {
@@ -256,16 +355,24 @@ img {
 }
 
 .mobile-nav {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 0 1.5rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
   background: #fff;
-  border-top: 1px solid var(--secondary-100);
+  border-top: 0 solid transparent;
+  transition: max-height 0.32s ease, opacity 0.24s ease, padding 0.32s ease;
 }
 
 .mobile-nav.open {
-  display: flex;
+  max-height: 24rem;
+  opacity: 1;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top-width: 1px;
+  border-top-color: var(--secondary-100);
 }
 
 .mobile-nav .btn {
@@ -408,6 +515,18 @@ img {
   border: 1px solid var(--secondary-100);
   background: var(--neutral-50);
   padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -12px rgba(15, 23, 42, 0.12);
+  border-color: var(--secondary-200);
+}
+
+.card--dark:hover,
+.card--blue:hover {
+  border-color: transparent;
 }
 
 .card--white {
@@ -591,11 +710,23 @@ img {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--secondary-700);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.12);
+  border-color: var(--primary-200);
+}
+
+.tech-item:hover [data-icon] {
+  transform: scale(1.15);
 }
 
 .tech-item [data-icon] {
   color: var(--primary-500);
   display: inline-flex;
+  transition: transform 0.25s ease;
 }
 
 /* ==========================================================================

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js-ready");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SoftVeld | Enterprise Software Engineering</title>
   <meta name="description" content="SoftVeld engineers enterprise-grade custom software solutions that scale with your vision — cloud architecture, desktop applications, and seamless user experiences.">
@@ -39,7 +40,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
-        <div>
+        <div class="hero-enter">
           <span class="badge">Software Excellence</span>
           <h1>Architecting Your <span class="accent">Digital Future</span></h1>
           <p class="hero__subtitle">
@@ -51,7 +52,7 @@
             <a href="contact.html" class="btn btn--primary">Launch Your Project</a>
           </div>
         </div>
-        <div class="code-window">
+        <div class="code-window hero-enter-delay">
           <div class="code-window__bar">
             <span class="code-window__dot code-window__dot--red"></span>
             <span class="code-window__dot code-window__dot--yellow"></span>
@@ -79,7 +80,7 @@
     <!-- Why choose us -->
     <section class="section section--white">
       <div class="container">
-        <div class="section-intro">
+        <div class="section-intro" data-reveal>
           <h2 class="section-heading">Why Leading Firms Choose SoftVeld</h2>
           <p class="section-sub">
             Precision engineering, transparent communication, and a commitment
@@ -87,7 +88,7 @@
           </p>
         </div>
 
-        <div class="grid grid--2">
+        <div class="grid grid--2" data-reveal-group>
           <div class="card">
             <span class="icon-box"><span data-icon="layout-dashboard" data-size="20"></span></span>
             <h3>Technical Superiority</h3>
@@ -137,7 +138,7 @@
     <!-- Core technologies -->
     <section class="section">
       <div class="container">
-        <div class="section-row">
+        <div class="section-row" data-reveal>
           <div>
             <h2 class="section-heading">Our Core Technologies</h2>
             <p class="section-sub">
@@ -148,7 +149,7 @@
           <a href="services.html" class="link-more">Explore Our Stack <span data-icon="external-link" data-size="14"></span></a>
         </div>
 
-        <div class="tech-grid">
+        <div class="tech-grid" data-reveal-group>
           <div class="tech-item"><span data-icon="code-xml" data-size="18"></span> C# / .NET 6–10</div>
           <div class="tech-item"><span data-icon="server" data-size="18"></span> ASP.NET Core</div>
           <div class="tech-item"><span data-icon="monitor" data-size="18"></span> WPF &amp; Desktop Apps</div>
@@ -163,7 +164,7 @@
 
     <!-- CTA -->
     <section class="cta-banner">
-      <div class="container">
+      <div class="container" data-reveal>
         <h2>Ready to build the future?</h2>
         <p>
           Schedule a technical discovery call with our architects today and

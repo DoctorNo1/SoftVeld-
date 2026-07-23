@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>if ("IntersectionObserver" in window) document.documentElement.classList.add("js-ready");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | SoftVeld</title>
   <meta name="description" content="Whether you have a specific project in mind or just want to explore the possibilities of partnership, our team of engineers and designers is ready.">
@@ -38,7 +39,7 @@
 
     <!-- Hero -->
     <section style="padding-top: 4rem;">
-      <div class="container">
+      <div class="container hero-enter">
         <span class="badge">Contact Us</span>
         <h1 style="margin-top: 1rem; max-width: 42rem; font-size: 3rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance;">
           Let's build something exceptional together.
@@ -54,7 +55,7 @@
     <!-- Form + info -->
     <section class="section">
       <div class="container">
-        <div class="grid split-13-1" style="align-items: start;">
+        <div class="grid split-13-1" style="align-items: start;" data-reveal-group>
           <div class="card card--white">
             <h3 style="font-size: 1.125rem;">Send us a Message</h3>
             <form id="contact-form" style="margin-top: 1.5rem;">
@@ -96,15 +97,6 @@
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div class="contact-info-card">
-              <span class="icon-box"><span data-icon="mail" data-size="18"></span></span>
-              <div>
-                <h3>Email</h3>
-                <p>Our team responds within 24 business hours.</p>
-                <a href="mailto:hello@softveld.io" class="link-more" style="margin-top: 0.25rem;">hello@softveld.io</a>
-              </div>
-            </div>
-
             <div class="hours-card">
               <div class="hours-card__title"><span data-icon="clock" data-size="16"></span> Operational Hours</div>
               <div class="hours-row"><span>Mon — Fri</span><span>09:00 — 18:00 PST</span></div>
